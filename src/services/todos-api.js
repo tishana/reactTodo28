@@ -25,3 +25,9 @@ export const createTodo = (todo) => {
     const response = axios.post(URL, todo)
     return response
 }
+// Delete the Todo
+export const deleteTodo = (id) => {
+    const URL = `${baseURL}/${id}`
+    const response = axios.delete(URL)
+    return response
+}
