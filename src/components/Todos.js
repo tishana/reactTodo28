@@ -1,6 +1,7 @@
 import { getTodos } from "../services/todos-api"
 import{useState, useEffect} from 'react'
 import Create from "./CreateTodo"
+import { Link } from "react-router-dom"
 
 export default function Todos() {
     const [todos, setTodos] = useState([])
@@ -14,7 +15,10 @@ export default function Todos() {
             <ul>
             {todos.map((todo) =>{
                 return (
-                    <li><a href={`/${todo._id}`}>{todo.description}</a></li>
+                    <div>
+                    <Link to={`/${todo._id}`}>{todo.description}</Link>
+                    </div>
+                    // <li><a href={`/${todo._id}`}>{todo.description}</a></li>
                 )
             })}
           </ul>

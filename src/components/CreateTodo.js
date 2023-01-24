@@ -6,8 +6,8 @@ function Create() {
 
     const createTheTodo = (e) => {
         const todo = {description: e.target.description.value, complete: false}
-        createTodo(todo)
-        nav('/')
+        createTodo(todo).then(() => nav('/'))
+        
     }
 
 return(
