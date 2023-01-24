@@ -19,7 +19,7 @@ export default function Todo() {
         <div>
             <h1>Todo:</h1>
             <h3>{todo.description}</h3>
-            Completed: <input type='checkbox' defaultChecked={todo.complete} /> 
+            Completed: <input type='checkbox' defaultChecked={todo.complete} disabled/> 
             <button onClick={() => {nav(`/${id}/edit`)}}>Edit</button>
             <button onClick={deleteTheTodo}>Delete</button> 
             <button onClick={() => {nav('/')}}>Main</button> 
