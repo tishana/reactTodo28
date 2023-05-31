@@ -15,9 +15,9 @@ export default function EditTodo(){
     const editTheTodo = e => {
         e.preventDefault()
         const updatedTodo = {description: e.target.description.value, complete: e.target.complete.checked}
-        editTodo(id, updatedTodo)
-        nav(`/${id}`)
-    }
+        editTodo(id, updatedTodo).then(() => nav(`/${id}`))
+   
+     }
   return (
     <div>
         <form onSubmit={editTheTodo}>

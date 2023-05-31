@@ -4,6 +4,8 @@ import Create from "./CreateTodo"
 import { Link } from "react-router-dom"
 
 export default function Todos() {
+
+    const apiKey = process.env.APIKEY
     const [todos, setTodos] = useState([])
     useEffect(() => {
         getTodos() // calling the function to get the data
@@ -12,7 +14,7 @@ export default function Todos() {
     console.log(todos)
     return(
         <div>
-            <ul>
+            <>
             {todos.map((todo) =>{
                 return (
                     <div>
@@ -21,7 +23,7 @@ export default function Todos() {
                     // <li><a href={`/${todo._id}`}>{todo.description}</a></li>
                 )
             })}
-          </ul>
+          </>
           <Create />  
         </div>
     )

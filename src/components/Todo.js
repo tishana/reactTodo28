@@ -11,8 +11,7 @@ export default function Todo() {
         .then(res => setTodo(res.data))}, [])
 
     const deleteTheTodo = () => {
-       deleteTodo(id) // delete function goes here
-        nav('/') // navigate back to the main screen
+       deleteTodo(id).then(() => nav('/')) // delete function goes here and navigate back to the main screen
     }
 
     return(
